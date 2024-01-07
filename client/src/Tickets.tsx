@@ -13,6 +13,13 @@ export const Tickets = ({ tickets, search, onHideTicket }: { tickets: Ticket[], 
             </p>
             <footer>
                 <div className='meta-data'>By {ticket.userEmail} | {new Date(ticket.creationTime).toLocaleString()}</div>
+                <div className='labels'>
+                    {
+                        ticket.labels?.map((label) => (
+                            <div className='label'>{label}</div>
+                        ))
+                    }
+                </div>
             </footer>
         </li>))}
     </ul>);

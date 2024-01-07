@@ -123,6 +123,21 @@ body {
 				color: #20455e;
 			}
 
+			.labels {
+				gap: 5px;
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+			}
+
+			.label {
+				padding: 3px 6px;
+				font-size: 10px;
+				border: 1px solid #a5d2fa;
+				border-radius: 2px;
+				background-color: #d4e7f8;
+			}
+
 			footer {
 
 				display: flex;
