@@ -1,11 +1,12 @@
 import React from 'react';
 import { Ticket } from './api';
-export const Tickets = ({ tickets, search }: { tickets: Ticket[], search: string }) => {
-    const filteredTickets = tickets
-        .filter((t) => (t.title.toLowerCase() + t.content.toLowerCase()).includes(search.toLowerCase()));
+export const Tickets = ({ tickets, search, onHideTicket }: { tickets: Ticket[], search: string, onHideTicket: (ticketId: string) => void }) => {
 
     return (<ul className='tickets'>
-        {filteredTickets.map((ticket) => (<li key={ticket.id} className='ticket'>
+        {tickets.map((ticket) => (<li key={ticket.id} className='ticket'>
+            <button className='hide-button' onClick={() => onHideTicket(ticket.id)}>
+                Hide
+            </button>
             <h5 className='title'>{ticket.title}</h5>
             <p className='content'>
                 {ticket.content}
